@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <title>Starship Reliability | Monte Carlo Simulation</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <script src="simulation.js" defer></script>
+  <script src="user_input.js" defer></script>
+  <script src="visualisation.js" defer></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body onload="initialiseCharts()">
+  <h1 id="main-heading">Starship Reliability | Monte Carlo Simulation</h1>
+
+  <p>Blah blah blah</p>
+  <br />
+
+  <div class="simulation-container">
+
+    <div class="multi-chart-container">
+      <div class="chart-container">
+        <canvas id="pad-loss-distribution-chart"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="booster-loss-distribution-chart"></canvas>
+      </div>
+      <div class="chart-container">
+        <canvas id="ship-loss-distribution-chart"></canvas>
+      </div>
+    </div>
+
+    <div class="input-container">
+      <label for="num_launches">Number of launches:</label>
+      <input type="number" id="num_launches" value="15" min="1" step="1"/>
+      <br />
+
+      <label for="num_pads">Number of launch pads:</label>
+      <input type="number" id="num_pads" value="4" min="1" step="1"/>
+      <br />
+
+      <label for="num_pads">Number of boosters:</label>
+      <input type="number" id="num_boosters" value="8" min="1" step="1"/>
+      <br />
+
+      <label for="num_pads">Number of ships:</label>
+      <input type="number" id="num_ships" value="8" min="1" step="1"/>
+      <br \>
+      
+      <label for="booster_chance_catch_attempt">Percent chance of booster catch attempt being made:</label>
+      <input type="number" id="booster_chance_catch_attempt" value="99.0" min="0" max="100" step="0.1"/>
+      <br \>
+
+      <label for="booster_chance_catch_success">Percent chance of booster catch attempt being successful:</label>
+      <input type="number" id="booster_chance_catch_success" value="99.0" min="0" max="100" step="0.1"/>
+      <br \>
+
+      <label for="ship_chance_catch_attempt">Percent chance of ship catch attempt being made:</label>
+      <input type="number" id="ship_chance_catch_attempt" value="99.0" min="0" max="100" step="0.1"/>
+      <br \>
+
+      <label for="ship_chance_catch_success">Percent chance of ship catch attempt being successful:</label>
+      <input type="number" id="ship_chance_catch_success" value="99.0" min="0" max="100" step="0.1"/>
+      <br \>
+
+      <label for="num_simulations">Number of simulations:</label>
+      <input type="number" id="num_simulations" value="10000" min="1" step="1"/>
+      <br \>
+
+      <button onclick="runSimulation()">Run Simulation</button>
+      <button onclick="setInputToDefault()">Reset</button>
+    </div>
+
+  </div>
+
+</body>
+
+</html>
