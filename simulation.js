@@ -50,11 +50,17 @@ function runSimulation() {
     simulation_results.lost_ship_distribution[campaignShipLosses]++;
     simulation_results.lost_pad_distribution[campaignPadLosses]++;
   }
-  
-  // Remove trailing zeros from distributions
-  simulation_results.lost_booster_distribution.splice(simulation_results.lost_booster_distribution.findLastIndex(x => x > 0) + 1);
-  simulation_results.lost_ship_distribution.splice(simulation_results.lost_ship_distribution.findLastIndex(x => x > 0) + 1);
-  simulation_results.lost_pad_distribution.splice(simulation_results.lost_pad_distribution.findLastIndex(x => x > 0) + 1);
 
-  renderResults(simulation_params, simulation_results);
+  renderResults(simulation_params, processResults(simulation_results));
+}
+
+function processResults(simulation_results) {
+  let processedResults = {};
+
+  // Remove trailing zeros from distributions
+  processedResults.lost_booster_distribution = simulation_results.lost_booster_distribution.slice(0, simulation_results.lost_booster_distribution.findLastIndex(x => x > 0) + 1);
+  processedResults.lost_ship_distribution = simulation_results.lost_ship_distribution.slice(0, simulation_results.lost_ship_distribution.findLastIndex(x => x > 0) + 1);
+  processedResults.lost_pad_distribution = simulation_results.lost_pad_distribution.slice(0, simulation_results.lost_pad_distribution.findLastIndex(x => x > 0) + 1);
+
+  return processedResults;
 }
