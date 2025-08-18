@@ -122,7 +122,7 @@ function generateBackgroundColorArray(failure_threshold, max_value) {
     'rgb(75, 192, 87)'
   ]
 
-  for (i = 0; i < failure_threshold; i++) {
+  for (i = 0; i < failure_threshold - 1; i++) {
     backgroundColor.push('rgb(255, 159, 64)');
   }
 
