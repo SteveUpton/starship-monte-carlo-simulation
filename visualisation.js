@@ -33,6 +33,13 @@ function initialiseCharts() {
     type: 'bar',
     data: data,
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: false
+        }
+      },
       scales: {
         x: {
           title: {
@@ -51,6 +58,13 @@ function initialiseCharts() {
     type: 'bar',
     data: data,
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: false
+        }
+      },
       scales: {
         x: {
           title: {
@@ -69,6 +83,13 @@ function initialiseCharts() {
     type: 'bar',
     data: data,
     options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          display: false
+        }
+      },
       scales: {
         x: {
           title: {
