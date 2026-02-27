@@ -51,16 +51,21 @@ function runSimulation() {
     simulation_results.lost_pad_distribution[campaignPadLosses]++;
   }
 
-  renderResults(simulation_params, processResults(simulation_results));
+  renderResults(simulation_params, processResults(simulation_results, simulation_params.num_simulations));
 }
 
-function processResults(simulation_results) {
+function processResults(simulation_results, num_simulations) {
   let processedResults = {};
 
   // Remove trailing zeros from distributions
   processedResults.lost_booster_distribution = simulation_results.lost_booster_distribution.slice(0, simulation_results.lost_booster_distribution.findLastIndex(x => x > 0) + 1);
   processedResults.lost_ship_distribution = simulation_results.lost_ship_distribution.slice(0, simulation_results.lost_ship_distribution.findLastIndex(x => x > 0) + 1);
   processedResults.lost_pad_distribution = simulation_results.lost_pad_distribution.slice(0, simulation_results.lost_pad_distribution.findLastIndex(x => x > 0) + 1);
+
+  // Convert to distributions to percentages
+  processedResults.lost_booster_distribution = processedResults.lost_booster_distribution.map(losses => ((losses/num_simulations) * 100).toFixed(2));
+  processedResults.lost_ship_distribution = processedResults.lost_ship_distribution.map(losses => ((losses/num_simulations) * 100).toFixed(2));
+  processedResults.lost_pad_distribution = processedResults.lost_pad_distribution.map(losses => ((losses/num_simulations) * 100).toFixed(2));
 
   return processedResults;
 }

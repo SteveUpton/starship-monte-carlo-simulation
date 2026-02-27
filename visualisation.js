@@ -38,7 +38,12 @@ function initialiseCharts() {
       plugins: {
         legend: {
           display: false
-        }
+        },
+        tooltip: {
+          callbacks: {
+            label: (context) => context.parsed.y + '%',
+          }
+        },
       },
       scales: {
         x: {
@@ -63,7 +68,12 @@ function initialiseCharts() {
       plugins: {
         legend: {
           display: false
-        }
+        },
+        tooltip: {
+          callbacks: {
+            label: (context) => context.parsed.y + '%',
+          }
+        },
       },
       scales: {
         x: {
@@ -88,7 +98,12 @@ function initialiseCharts() {
       plugins: {
         legend: {
           display: false
-        }
+        },
+        tooltip: {
+          callbacks: {
+            label: (context) => context.parsed.y + '%',
+          }
+        },
       },
       scales: {
         x: {
