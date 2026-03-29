@@ -12,7 +12,7 @@ function runSimulation() {
   const shipCatchAttemptChance = simulation_params.ship_chance_catch_attempt;
   const shipCatchSuccessChance = simulation_params.ship_chance_catch_success;
   const numLaunches = simulation_params.num_launches;
-  const numSimulations = simulation_params.num_simulations;
+  const numSimulations = 10000;
 
   // Monte Carlo simulation
   for (let i = 0; i < numSimulations; i++) {
@@ -51,7 +51,7 @@ function runSimulation() {
     simulation_results.lost_pad_distribution[campaignPadLosses]++;
   }
 
-  renderResults(simulation_params, processResults(simulation_results, simulation_params.num_simulations));
+  renderResults(simulation_params, processResults(simulation_results, numSimulations));
 }
 
 function processResults(simulation_results, num_simulations) {

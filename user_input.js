@@ -8,7 +8,6 @@ function getDefaultSimulationParams() {
     booster_chance_catch_success: 0.99,
     ship_chance_catch_attempt: 0.99,
     ship_chance_catch_success: 0.99,
-    num_simulations: 10000
   }
 }
 
@@ -25,7 +24,6 @@ function setInputValues(simulation_params) {
   document.getElementById("booster_chance_catch_success").value = (simulation_params.booster_chance_catch_success * 100).toFixed(1);
   document.getElementById("ship_chance_catch_attempt").value = (simulation_params.ship_chance_catch_attempt * 100).toFixed(1);
   document.getElementById("ship_chance_catch_success").value = (simulation_params.ship_chance_catch_success * 100).toFixed(1);
-  document.getElementById("num_simulations").value = simulation_params.num_simulations;
 }
 
 function getInputValues() {
@@ -38,6 +36,5 @@ function getInputValues() {
     booster_chance_catch_success: document.getElementById("booster_chance_catch_success").value / 100,
     ship_chance_catch_attempt: document.getElementById("ship_chance_catch_attempt").value / 100,
     ship_chance_catch_success: document.getElementById("ship_chance_catch_success").value / 100,
-    num_simulations: parseInt(document.getElementById("num_simulations").value)
   }
 }
