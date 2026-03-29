@@ -63,7 +63,19 @@
   height: 250px;
 }
 
-#main-heading {
+.docs {
+  text-align: center;
+  padding: 15px;
+}
+
+h1 {
+  text-align: center;
+  padding: 15px;
+  margin: 0;
+  font-size: 2rem;
+}
+
+h2 {
   text-align: center;
   padding: 15px;
   margin: 0;
@@ -73,6 +85,10 @@
 p {
   text-align: center;
   padding: 0 20px;
+}
+
+ol {
+  list-style-position: inside;
 }
 
 @media (max-width: 900px) {
@@ -98,11 +114,6 @@ p {
 }
 
 @media (max-width: 480px) {
-  #main-heading {
-    font-size: 1.2rem;
-    padding: 10px;
-  }
-
   .input-container {
     padding: 10px;
   }

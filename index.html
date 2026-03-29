@@ -16,10 +16,18 @@
 </head>
 
 <body onload="initialiseCharts()">
-  <h1 id="main-heading">Starship Reliability | Monte Carlo Simulation</h1>
+  <h1>Starship Reliability | Monte Carlo Simulation</h1>
 
-  <p>Blah blah blah</p>
-  <br />
+  <div class="docs">
+    <p>This is a Monte Carlo simulation, intended to model the impact of differing levels of Starship reliability on the overall success of a given launch campaign or mission. Simply input your values and run the simulation to see what outcomes are most likely.</p>
+
+    <p>The main purpose of this simulation is to shed light on two interesting questions:</p>
+    <ol>
+      <li>For a starship with a given reliability, what is the likelihood of a given launch campaign succeeding?</li>
+      <li>For a given launch campaign, what level of reliability would be needed to give a reasonable chance of campaign success?</li>
+    </ol>
+    <p>Detailed explanation of how the simulation works below and <a href="https://github.com/SteveUpton/starship-monte-carlo-simulation">code available on GitHub</a>.</p>
+  </div>
 
   <div class="simulation-container">
 
@@ -75,9 +83,18 @@
       <button onclick="runSimulation()">Run Simulation</button>
       <button onclick="setInputToDefault()">Reset</button>
     </div>
-
   </div>
 
+  <div class="docs">
+    <h2>How the simulation works</h2>
+    An individual launch is simulated as follows:
+
+    <h2>Limitations and considerations</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet animi, ea id voluptatum odio iusto soluta quia provident recusandae adipisci beatae sapiente! Velit quae rerum quia dolor, aperiam minus temporibus!
+
+    <h2>Interesting things to simulate</h2>
+    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet animi, ea id voluptatum odio iusto soluta quia provident recusandae adipisci beatae sapiente! Velit quae rerum quia dolor, aperiam minus temporibus!
+  </div>
 </body>
 
 </html>
