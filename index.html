@@ -83,7 +83,29 @@
 
   <div class="docs">
     <h2>How the simulation works</h2>
-    An individual launch is simulated as follows:
+    <p>An individual launch is simulated as follows:</p>
+
+    <p>After launching, the booster may attempt a catch. If it does not attempt a catch, it is lost. Not attempting a catch could represent a failure after stage separation (as in Flight 2), an off-shore divert (as in Flight 6) or a last minute abort. Basically any scenario where the booster is lost, but the tower is safe. The probability of attempting a catch is defined as a percentage in <b>Percent chance of booster catch attempt being made</b>. If a booster catch is attempted, there are 2 possible outcomes:</p>
+    <ol>
+      <li>The catch is successful, resulting in no lost boosters and no pads being damaged.</li>
+      <li>The catch fails, resulting in one booster being lost and one pad being damaged.</li>
+    </ol>
+    <p>The probability of a successful booster catch is defined as a percentage in <b>Percent chance of booster catch attempt being successful</b>.</p>
+
+    <p>After launch, the ship may attempt a catch. If it does not attempt a catch, it is lost. Not attempting a catch could represent a failure during ascent (as in Flights 2, 7 and 8), a failure on-orbit that precludes re-entry (as in Flight 9), a failure during re-entry (as in Flight 3), an off-target re-entry (as in Flight 4), an abort before its flip maneuver or a last minute abort. Basically any scenario where the ship is lost, but the tower is safe. The probability of attempting a catch is defined as a percentage in <b>Percent chance of ship catch attempt being made</b>. If a ship catch is attempted, there are 2 possible outcomes:</p>
+    <ol>
+      <li>The catch is successful, resulting in no lost ships and no pads being damaged.</li>
+      <li>The catch fails, resulting in one ship being lost and one pad being damaged.</li>
+    </ol>
+    <p>The probability of a successful ship catch is defined as a percentage in <b>Percent chance of ship catch attempt being successful</b>.</p>
+
+    <p>So for a given launch, the best scenario is that no vehicles are lost and no pads are damaged, and the worst scenario is that both the booster and the ship are lost and 2 pads are damaged.</p>
+
+    <p>When a launch campaign is simulated (the number of launches in the campaign being specified by <b>Number of launches</b>), and the total number of lost boosters, ships and damaged pads is calculated for that specific launch campaign.</p>
+
+    <p>When you press Run Simulation, 10000 launch campaigns are simulated and their results collected. The graphs then show the distribution of results. That is, the first graph shows, out of the 10000 simulated campaigns, how many resulted in 0 pads being damaged, how many resulted in 1 pad being damaged etc. It's a pretty basic monte carlo simulation, intended to give you an intuitive feel for how adjusting certain variables (number of flights, success rate of tower catches etc.) makes outcomes more or less likely.</p>
+
+    <p>Note: Changing the settings for <b>Number of launch pads</b>, <b>Number of boosters</b> and <b>Number of ships</b> does not actually change the simulation in any way. All it does is change the colours of the bars in the distribution chart. If there are zero failures, that's an ideal case so the bar is green. If there are some failures, but not enough to “run out of vehicles/pads”, that's less than ideal, but the campaign can still be completed, so the bar is orange. If there are enough failures to “run out of vehicles/pads” before the campaign completes then you can't complete the campaign and are not going beyond LEO today, so the bar is red. Purely cosmetic, you can interpret it as you see fit.</p>
 
     <h2>Limitations and considerations</h2>
     Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet animi, ea id voluptatum odio iusto soluta quia provident recusandae adipisci beatae sapiente! Velit quae rerum quia dolor, aperiam minus temporibus!
