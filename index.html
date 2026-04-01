@@ -124,7 +124,21 @@
     </ul>
 
     <h2>Interesting things to simulate</h2>
-    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet animi, ea id voluptatum odio iusto soluta quia provident recusandae adipisci beatae sapiente! Velit quae rerum quia dolor, aperiam minus temporibus!
+    <p>Well, I think they're interesting</p>
+    <ul>
+      <li>The default values for the simulation are a wild guess at a single launch campaign (eg. sending a HLS Starship to the Moon or a single Starship to Mars). You could also simulate larger campaigns, like <a href="https://x.com/SpaceX/status/1928185351933239641">Musk's stated intention to send 100 starships to Mars</a> in the 2030 launch window or 500 in 2033. Just increase the <b>Number of launches</b> to 500 * number of launches needed to send a single Starship to Mars.</li>
+      <li>Tweaking the values of <b>Chance of attempting a catch</b> and <b>Chance of a catch succeeding</b> separately can allow you to simulate different scenarios:</li>
+      <ul>
+        <li>Decreasing <b>Chance of attempting a catch</b> can simulate SpaceX being more cautious with catch attempts to reduce the risk of a failed catch damaging launch infrastructure.</li>
+        <li>Increasing <b>Chance of attempting a catch</b> can simulate a more gung-ho approach, attempting catches even when the conditions aren't ideal.</li>
+        <li>Increasing the <b>Chance of attempting a catch</b> while increasing the chance of <b>Chance of a catch succeeding</b> can simulate improving overall reliability of the system.</li>
+        <li>Increasing <b>Chance of attempting a catch</b> while decreasing <b>Chance of a catch succeeding</b> simulates a case where catch attempts are inherently risky, resulting in more pads being damaged.</li>
+        <li>Setting <b>Chance of attempting a catch</b> to 0% effectively simulates launching in expendable mode, as there will never be a catch attempt (and thus, no risk to launch infrastructure). Really, that just means the number of lost vehicles will be equal to the number of launches. Not very interesting to visualise, but you can simulate it if you want!</li>
+        <li>Setting <b>Chance of a catch succeeding</b> to 100% allows you to simulate an alternate landing approach that does not risk damaging the launch pad (eg. using legs, rather than a tower catch) because this effectively sets the chance of damaging a pad to 0. You can then use the <b>Chance of attempting a catch</b> to set the probability of the alternative landing approach succeeding. If catches never damage the pad, then <b>Chance of attempting a catch</b> effectively becomes the probability of recovering the booster, with no infrastructure risk.</li>
+      </ul>
+      <li>Decreasing <b>Number of launches</b> can represent improved Starship performance (lower dry mass, higher thrust, higher I<sub><i>SP</i></sub>, increased payload to orbit etc.) as fewer flights would be required in this case. The inverse is also true. This is the key variable if you are speculating about the performance and capabilities of Starship.</li>
+      <li>Try inputting the current Falcon 9 reliability figures. Falcon 9 is currently the only operational, re-usable launch vehicle and successful landings of the Falcon 9 first stage have become routine occurrences, though failures occasionally happen, like CRS-16's 2018 offshore divert, Starlink 8-6's 2024 landing failure, Starlink 12-20's post landing failure, or Starlink 9-3's 2024 upper stage failure. Calculate the landing/catch attempt and failure probabilities as you see fit, then simulate how that would work out with a Starship launch campaign!</li>
+    </ul>
   </div>
 </body>
 
